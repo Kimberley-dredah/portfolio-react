@@ -10,27 +10,27 @@ import Contact from "./pages/Contact";
 export default function App() {
   const [page, setPage] = useState("Home");
 
-  const containerStyle = {
+  const appStyle = {
     fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial',
-    color: "#1f2937",
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    color: "#fff",
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
-    background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)",
+    background: "linear-gradient(180deg, #0b0b0b 0%, #050505 100%)",
   };
 
   const mainStyle = {
     flex: 1,
     width: "100%",
-    maxWidth: 1000,
+    maxWidth: 1100,
     margin: "0 auto",
     padding: "28px 20px",
     boxSizing: "border-box",
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={appStyle}>
       <Navbar active={page} onNavigate={setPage} />
       <main style={mainStyle}>
         {page === "Home" && <Home onNavigate={setPage} />}

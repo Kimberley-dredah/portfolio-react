@@ -2,75 +2,74 @@
 import React from "react";
 
 export default function About() {
-  const container = {
+  const column = {
     display: "flex",
-    gap: 20,
     flexDirection: "column",
+    gap: 18,
   };
 
   const card = {
     padding: 18,
     borderRadius: 12,
     background: "#ffffff",
-    boxShadow: "0 8px 30px rgba(15,23,42,0.04)",
-    border: "1px solid rgba(31,41,55,0.03)",
+    boxShadow: "0 12px 36px rgba(2,6,23,0.06)",
+    border: "1px solid rgba(15,15,15,0.04)",
   };
 
   const heading = {
     margin: 0,
     fontSize: 22,
-    color: "#0f172a",
-    fontWeight: 700,
+    color: "#0b0b0b",
+    fontWeight: 800,
   };
 
   const p = {
     margin: "12px 0 0 0",
-    color: "#475569",
+    color: "#374151",
     lineHeight: 1.6,
     fontSize: 15,
   };
 
-  const skillsWrap = {
+  const skills = {
     display: "flex",
     gap: 8,
     flexWrap: "wrap",
     marginTop: 12,
   };
 
-  const skill = {
+  const chip = {
     padding: "6px 10px",
-    background: "rgba(99,102,241,0.08)",
-    color: "#4f46e5",
-    borderRadius: 8,
-    fontWeight: 600,
+    borderRadius: 10,
+    background: "linear-gradient(90deg, rgba(255,212,64,0.08), rgba(255,212,64,0.02))",
+    color: "#0b0b0b",
+    fontWeight: 700,
     fontSize: 13,
+    border: "1px solid rgba(255,212,64,0.06)",
   };
 
   return (
-    <section style={container}>
+    <section style={column}>
       <div style={card}>
         <h2 style={heading}>About Me</h2>
         <p style={p}>
           I'm a student software engineer focused on frontend development. I
-          enjoy turning ideas into clean interfaces that are accessible and
-          pleasant to use. I’m currently learning advanced React patterns,
-          component design, and UX fundamentals with Figma.
+          enjoy turning ideas into interfaces that are clean, accessible, and
+          polished. I work with React, practice component-driven design, and use
+          Figma for UI and prototyping.
         </p>
 
-        <div style={skillsWrap}>
-          <div style={skill}>React</div>
-          <div style={skill}>JavaScript (ES6+)</div>
-          <div style={skill}>HTML & CSS</div>
-          <div style={skill}>Figma</div>
-          <div style={skill}>Accessibility</div>
+        <div style={skills}>
+          <div style={chip}>React</div>
+          <div style={chip}>JavaScript (ES6+)</div>
+          <div style={chip}>HTML & CSS</div>
+          <div style={chip}>Figma</div>
+          <div style={chip}>Accessibility</div>
         </div>
       </div>
 
       <div style={card}>
-        <h3 style={{ margin: 0, fontSize: 16, color: "#0f172a" }}>
-          Learning & Goals
-        </h3>
-        <ul style={{ color: "#475569", marginTop: 12 }}>
+        <h3 style={{ margin: 0, fontSize: 16, color: "#0b0b0b" }}>Learning & Goals</h3>
+        <ul style={{ color: "#374151", marginTop: 12, paddingLeft: 18 }}>
           <li style={{ margin: "8px 0" }}>
             Improve component-driven design and reusability.
           </li>

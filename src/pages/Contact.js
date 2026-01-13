@@ -13,47 +13,60 @@ export default function Contact() {
     padding: 18,
     borderRadius: 12,
     background: "#ffffff",
-    border: "1px solid rgba(31,41,55,0.04)",
-    boxShadow: "0 8px 30px rgba(15,23,42,0.04)",
+    border: "1px solid rgba(15,15,15,0.04)",
+    boxShadow: "0 12px 36px rgba(2,6,23,0.06)",
   };
 
-  const linkStyle = {
-    color: "#0f172a",
-    textDecoration: "none",
-    fontWeight: 700,
+  const heading = {
+    margin: 0,
+    fontSize: 20,
+    color: "#0b0b0b",
+    fontWeight: 800,
   };
 
-  const info = {
-    color: "#475569",
-    fontSize: 15,
+  const body = {
     marginTop: 8,
+    color: "#374151",
+    fontSize: 15,
+  };
+
+  const link = {
+    color: "#0b0b0b",
+    fontWeight: 800,
+    textDecoration: "none",
+    background: "linear-gradient(90deg, rgba(255,212,64,0.08), rgba(255,212,64,0.02))",
+    padding: "6px 10px",
+    borderRadius: 8,
+    display: "inline-block",
+    border: "1px solid rgba(255,212,64,0.04)",
+  };
+
+  const note = {
+    color: "#6b7280",
+    fontSize: 14,
   };
 
   return (
     <section style={wrap}>
       <div style={card}>
-        <h2 style={{ margin: 0, fontSize: 20, color: "#0f172a" }}>Get in touch</h2>
-        <p style={{ marginTop: 8, color: "#475569" }}>
+        <h2 style={heading}>Get in touch</h2>
+        <p style={body}>
           I'm open to learning opportunities, collaborations, and feedback.
           Send a short note and I'll get back to you.
         </p>
 
-        <div style={info}>
-          <div>
+        <div style={{ marginTop: 12 }}>
+          <div style={{ marginBottom: 8 }}>
             Email:{" "}
-            <a
-              style={linkStyle}
-              href="mailto:kimberley@example.com"
-              rel="noopener noreferrer"
-            >
+            <a style={link} href="mailto:kimberley@example.com" rel="noopener noreferrer">
               kimberley@example.com
             </a>
           </div>
 
-          <div style={{ marginTop: 8 }}>
+          <div>
             GitHub:{" "}
             <a
-              style={linkStyle}
+              style={link}
               href="https://github.com/Kimberley-dredah"
               target="_blank"
               rel="noopener noreferrer"
@@ -64,7 +77,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div style={{ color: "#6b7280", fontSize: 14 }}>
+      <div style={note}>
         Note: This site uses client-side links only — no backend is required for
         contact. Replace the email and GitHub link with your real ones before
         publishing.

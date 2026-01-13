@@ -29,11 +29,16 @@ export default function Projects() {
     gap: 16,
   };
 
+  const pageTitle = {
+    margin: "0 0 12px 0",
+    fontSize: 20,
+    color: "#0b0b0b",
+    fontWeight: 800,
+  };
+
   return (
     <section>
-      <h2 style={{ margin: "0 0 12px 0", fontSize: 20, color: "#0f172a" }}>
-        Projects
-      </h2>
+      <h2 style={pageTitle}>Projects</h2>
 
       <div style={grid}>
         {projects.map((p) => (
@@ -47,46 +52,48 @@ export default function Projects() {
 function ProjectCard({ project }) {
   const [hover, setHover] = React.useState(false);
 
-  const baseCard = {
+  const base = {
     padding: 16,
     borderRadius: 12,
     background: "#ffffff",
-    border: "1px solid rgba(31,41,55,0.04)",
+    border: "1px solid rgba(15,15,15,0.04)",
     boxSizing: "border-box",
     transition: "transform 180ms ease, box-shadow 180ms ease",
     cursor: "pointer",
   };
 
   const style = {
-    ...baseCard,
-    transform: hover ? "translateY(-6px)" : "none",
+    ...base,
+    transform: hover ? "translateY(-8px)" : "translateY(0)",
     boxShadow: hover
-      ? "0 12px 40px rgba(15,23,42,0.08)"
-      : "0 6px 18px rgba(15,23,42,0.04)",
+      ? "0 18px 48px rgba(2,6,23,0.12)"
+      : "0 8px 20px rgba(2,6,23,0.06)",
   };
 
   const titleStyle = {
     margin: 0,
     fontSize: 16,
-    color: "#0f172a",
-    fontWeight: 700,
+    color: "#0b0b0b",
+    fontWeight: 800,
   };
 
   const descStyle = {
     marginTop: 8,
     fontSize: 14,
-    color: "#475569",
+    color: "#374151",
   };
 
   const tagStyle = {
     display: "inline-block",
     padding: "6px 8px",
-    borderRadius: 8,
-    background: "rgba(99,102,241,0.06)",
-    color: "#4f46e5",
+    borderRadius: 10,
+    background: "linear-gradient(90deg, rgba(255,212,64,0.06), rgba(255,212,64,0.02))",
+    color: "#0b0b0b",
     fontSize: 12,
     marginRight: 8,
     marginTop: 12,
+    border: "1px solid rgba(255,212,64,0.04)",
+    fontWeight: 700,
   };
 
   return (
@@ -95,12 +102,15 @@ function ProjectCard({ project }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => window.alert("This is a placeholder project card.")}
+      aria-label={`Open project ${project.title}`}
     >
       <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
         <h3 style={titleStyle}>{project.title}</h3>
-        <div style={{ color: "#6b7280", fontSize: 13 }}>•</div>
+        <div style={{ color: "#9ca3af", fontSize: 13 }}>•</div>
       </div>
+
       <p style={descStyle}>{project.desc}</p>
+
       <div style={{ marginTop: 12 }}>
         {project.tags.map((t) => (
           <span key={t} style={tagStyle}>
