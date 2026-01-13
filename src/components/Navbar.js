@@ -1,4 +1,4 @@
-function Navbar() {
+function Navbar({ setActivePage }) {
     const navStyle = {
       display: "flex",
       justifyContent: "space-between",
@@ -8,12 +8,6 @@ function Navbar() {
       color: "#ffffff",
       position: "sticky",
       top: 0,
-      zIndex: 100,
-    };
-  
-    const logoStyle = {
-      fontSize: "22px",
-      fontWeight: "bold",
     };
   
     const linksStyle = {
@@ -28,14 +22,17 @@ function Navbar() {
   
     return (
       <nav style={navStyle}>
-        <div style={logoStyle}>Portfolio</div>
+        <h2 style={{ cursor: "pointer" }} onClick={() => setActivePage("home")}>
+          Kimberley
+        </h2>
   
         <div style={linksStyle}>
-          <span style={linkStyle}>Home</span>
-          <span style={linkStyle}>About</span>
-          <span style={linkStyle}>Skills</span>
-          <span style={linkStyle}>Projects</span>
-          <span style={linkStyle}>Contact</span>
+          <span style={linkStyle} onClick={() => setActivePage("home")}>
+            Home
+          </span>
+          <span style={linkStyle} onClick={() => setActivePage("about")}>
+            About
+          </span>
         </div>
       </nav>
     );
